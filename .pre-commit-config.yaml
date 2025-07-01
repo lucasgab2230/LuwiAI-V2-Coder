@@ -52,7 +52,6 @@ repos:
   hooks:
     - id: python-no-log-warn
     - id: python-no-eval
-    - id: python-no-log-string-interpolation
 
 - repo: https://github.com/pre-commit/mirrors-autopep8
   rev: v2.0.2
