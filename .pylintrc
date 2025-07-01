@@ -1,0 +1,39 @@
+[MASTER]
+
+# Add any additional directories to Python path
+init-hook='import sys; sys.path.append(".")'
+
+[MESSAGES CONTROL]
+
+# Disable certain messages
+disable=
+    C0111,  # Missing docstring
+    C0103,  # Invalid name
+    C0301,  # Line too long
+    R0903,  # Too few public methods
+    R0913,  # Too many arguments
+    W0511,  # TODO found
+    W0621,  # Redefining name from outer scope
+    W0622,  # Redefining built-in
+    W0613,  # Unused argument
+    W0611,  # Unused import
+
+[FORMAT]
+
+# Maximum line length
+max-line-length=100
+
+[BASIC]
+
+# Good variable names which should always be accepted
+good-names=i,j,k,ex,Run,_,x,y,z
+
+[TYPECHECK]
+
+# Add any additional type hints directories
+ignore-mixin-members=yes
+
+[REPORTS]
+
+# Disable all reports
+reports=no
