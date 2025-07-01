@@ -1,0 +1,67 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.5.0
+  hooks:
+    - id: check-added-large-files
+      args: [--maxkb=500]
+    - id: check-case-conflict
+    - id: check-byte-order-marker
+    - id: check-executables-have-shebangs
+    - id: check-json
+    - id: check-merge-conflict
+    - id: check-yaml
+    - id: detect-private-key
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+
+- repo: https://github.com/pycqa/flake8
+  rev: 6.1.0
+  hooks:
+    - id: flake8
+      additional_dependencies: [flake8-docstrings]
+      args: [--max-line-length=100]
+
+- repo: https://github.com/psf/black
+  rev: 23.10.1
+  hooks:
+    - id: black
+      language_version: python3.11
+      args: [--target-version=py311]
+
+- repo: https://github.com/pycqa/isort
+  rev: 5.12.0
+  hooks:
+    - id: isort
+      args: [--profile=black]
+
+- repo: https://github.com/pre-commit/mirrors-mypy
+  rev: v1.6.1
+  hooks:
+    - id: mypy
+      additional_dependencies: [numpy]
+
+- repo: https://github.com/PyCQA/pylint
+  rev: v2.17.5
+  hooks:
+    - id: pylint
+      additional_dependencies: [numpy]
+      args: [--rcfile=.pylintrc]
+
+- repo: https://github.com/pre-commit/pygrep-hooks
+  rev: v1.9.0
+  hooks:
+    - id: python-no-log-warn
+    - id: python-no-eval
+    - id: python-no-log-string-interpolation
+
+- repo: https://github.com/pre-commit/mirrors-autopep8
+  rev: v2.0.2
+  hooks:
+    - id: autopep8
+      args: [--aggressive, --aggressive]
+
+- repo: https://github.com/pre-commit/mirrors-prettier
+  rev: v2.8.8
+  hooks:
+    - id: prettier
+      files: \.md$|\.yaml$|\.yml$|\.json$
